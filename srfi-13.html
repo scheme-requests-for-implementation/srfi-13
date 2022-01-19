@@ -14,7 +14,8 @@
     <title>SRFI 13: String Libraries</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/srfi.css" type="text/css" />
+    <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
+    <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
     <!-- Should have a media=all to get, for example, printing to work.
       == But my Netscape will completely ignore the tag if I do that.
       -->
@@ -30,11 +31,11 @@
 
            div.inset { margin-left: +5%; }
 
-           h1 { margin-left: -5%; }
-           h1, h2 { clear: both; }
+           h2 { margin-left: -5%; }
+           h2, h3 { clear: both; }
            h1, h2, h3, h4, h5, h6 { color: blue }
            div.title-text { font-size: large; font-weight: bold; }
-	   h3 { margin-top: 2em; margin-bottom: 0em }
+	   h4 { margin-top: 2em; margin-bottom: 0em }
 
 	   /* "Continue" class marks text that isn't really the start
 	   ** of a new paragraph -- e.g., continuing a para after a 
@@ -143,16 +144,11 @@
 <body>
 
 <!--========================================================================-->
-<H1>Title</H1>
+<h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI surfboard logo" /></a>13: String Libraries</h1>
 
-<div class=title-text>String Libraries</div>
+<p>by Olin Shivers</p>
 
-<!--========================================================================-->
-<H1>Author</H1>
-
-Olin Shivers
-
-<H1>Status</H1>
+<h2>Status</h2>
 
 <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+13+at+srfi+dotschemers+dot+org">srfi-13@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-13">archive</a>.</p>
 <UL>
@@ -166,7 +162,7 @@ Olin Shivers
 <LI>Revised: 2000-12-23
 </UL>
 
-<h1>Table of contents</H1>
+<h2>Table of contents</h2>
 
 <!-- A bug in netscape (?) keeps the first link in this UL from being active.
 ==== So the Abstract link be dead. 99/8/22 -Olin
@@ -224,7 +220,7 @@ Olin Shivers
 </ul>
 
 <!--========================================================================-->
-<h1><a name="Abstract">Abstract</a></H1>
+<h2 id="Abstract">Abstract</h2>
 <p>
 
 <abbr title="Revised^5 Report on Scheme"><a href="#R5RS">R5RS</a></abbr>
@@ -244,7 +240,7 @@ routines of
 <abbr title="Revised^5 Report on Scheme"><a href="#R5RS">R5RS</a></abbr>.
 
 <!--========================================================================-->
-<h1><a name="ProcedureIndex">Procedure Index</a></h1>
+<h2 id="ProcedureIndex">Procedure Index</h2>
 <p>
 Here is a list of the procedures provided by the string-lib 
 and string-lib-internals packages.
@@ -385,7 +381,7 @@ extended <abbr title="Revised^5 Report on Scheme"><a href="#R5RS">R5RS</a></abbr
 </div>
 
 <!--========================================================================-->
-<h1><a name="Rationale">Rationale</a></h1>
+<h2> id="Rationale">Rationale</h2>
 <p>
 
 This SRFI defines two libraries that provide a rich set of operations for
@@ -402,7 +398,7 @@ both case-sensitive and case-insensitive forms.
 All functionality is available in substring and full-string forms.
 
 <!--========================================================================-->
-<h2><a name="StringsAreCodePointSeqs">Strings are code-point sequences</a></h2>
+<h3 id="StringsAreCodePointSeqs">Strings are code-point sequences</h3>
 <p>
 This SRFI considers strings simply to be a sequence of "code points" or
 character encodings. Operations such as comparison or reversal are always done
@@ -419,7 +415,7 @@ this SRFI do not handle these "text" concerns; they restrict themselves
 to the underlying view of strings as merely a sequence of "code points."
 
 <!--========================================================================-->
-<h2><a name="NoLocales">String operations are locale- and context-independent</a></h2>
+<h3 id="NoLocales">String operations are locale- and context-independent</h3>
 <p>
 
 This SRFI defines string operations that are locale- and context-independent.
@@ -435,7 +431,7 @@ Locale- and context-sensitive text operations, such as collation, are
 explicitly deferred to a subsequent, companion "text" SRFI.
 
 <!--========================================================================-->
-<h2><a name="Unicode">Internationalisation &amp; super-ASCII character types</a></h2>
+<h3 id="Unicode">Internationalisation &amp; super-ASCII character types</h3>
 
 <p>
 The major issue confronting this SRFI is the existence of super-ASCII
@@ -447,7 +443,7 @@ some relevant issues. Be warned that life in a super-ASCII world is
 significantly more complex; there are no easy answers for many of these issues.
 
 <!--========================================================================-->
-<h3><a name="Case">Case mapping and case-folding</a></h3>
+<h4><a name="Case">Case mapping and case-folding</a></h4>
 
 <p>
 Upper- and lower-casing characters is complex in super-ASCII encodings.
@@ -517,7 +513,7 @@ that shifting locales won't wreck hash tables, b-trees, symbol tables, <em>etc.<
 
 
 <!--========================================================================-->
-<h3><a name="Eq">String equality &amp; string normalisation</a></h3>
+<h4><a name="Eq">String equality &amp; string normalisation</a></h4>
 
 <p>
 Comparing strings for equality is complicated because in some cases Unicode
@@ -569,7 +565,7 @@ These are adequate for "program" or "systems" use of strings (<em>e.g.</em>, to
 manipulate program identifiers and operating-system filenames).
 
 <!--========================================================================-->
-<h3><a name="Ineq">String inequality</a></h3>
+<h4><a name="Ineq">String inequality</a></h4>
 
 <p>
 Above and beyond the issues arising in string-equality, when we attempt
@@ -600,7 +596,7 @@ based upon a character-by-character comparison of the values used for
 representing the string.
 
 <!--========================================================================-->
-<h2><a name="NamingConventions">Naming conventions</a></h2>
+<h3 id="NamingConventions">Naming conventions</h3>
 
 <p>
 This library contains a large number of procedures, but they follow
@@ -640,7 +636,7 @@ particular
 </ul>
       
 <!--========================================================================-->
-<h2><a name="SharedStorage">Shared storage</a></h2>
+<h3 id="SharedStorage">Shared storage</h3>
 
 <p>
 Some Scheme implementations, <em>e.g.</em> guile and T, provide ways to construct
@@ -723,7 +719,7 @@ require implementations to provide shared-text substrings, the extended
 API is provided.
 
 <!--========================================================================-->
-<h2><a name="R5RS-procs">R4RS/R5RS procedures</a></h2>
+<h3 id="R5RS-procs">R4RS/R5RS procedures</h3>
 
 <p>
 The R4RS and <abbr title="Revised^5 Report on Scheme"><a href="#R5RS">R5RS</a></abbr> reports define 22 string procedures. The string-lib
@@ -764,7 +760,7 @@ They are uniformly extended to take optional start/end parameters specifying
 substring ranges.
 
 <!--========================================================================-->
-<h2><a name="ExtraSRFI">Extra-SRFI recommendations</a></h2>
+<h3 id="ExtraSRFI">Extra-SRFI recommendations</h3>
 
 <p>
 This SRFI recommends the following
@@ -826,7 +822,7 @@ This SRFI recommends the following
 
 
 <!--========================================================================-->
-<h1><a name="Procedures">Procedure Specification</a></h1>
+<h2 id="Procedures">Procedure Specification</h2>
 
 <p>
 In the following procedure specifications:
@@ -905,14 +901,14 @@ this restricts such a procedure to returning a single value;
 non-R5RS systems may not even provide this restriction.
 
 <!--========================================================================-->
-<h2><a name="MainProcs">Main procedures</a></h2>
+<h3 id="MainProcs">Main procedures</h3>
 
 <p>
 In a Scheme system that has a module or package system, these procedures
 should be contained in a module named "string-lib".
 
 <!--========================================================================-->
-<h3><a name="Predicates">Predicates</a></h3>
+<h4><a name="Predicates">Predicates</a></h4>
 
 <dl>
 <!--
@@ -980,7 +976,7 @@ Returns <code>#t</code> if <var>obj</var> is a string, otherwise returns <code>#
 
 
 <!--========================================================================-->
-<h3><a name="Constructors">Constructors</a></h3>
+<h4><a name="Constructors">Constructors</a></h4>
 
 <dl>
 <!--
@@ -1020,7 +1016,7 @@ Returns <code>#t</code> if <var>obj</var> is a string, otherwise returns <code>#
 </dl>
 
 <!--========================================================================-->
-<h3><a name="List2String">List &amp; string conversion</a></h3>
+<h4><a name="List2String">List &amp; string conversion</a></h4>
 
 <dl>
 
@@ -1110,7 +1106,7 @@ Returns <code>#t</code> if <var>obj</var> is a string, otherwise returns <code>#
 
 
 <!--========================================================================-->
-<h3><a name="Selection">Selection</a></h3>
+<h4><a name="Selection">Selection</a></h4>
 
 <dl>
 <!--
@@ -1281,7 +1277,7 @@ Returns <code>#t</code> if <var>obj</var> is a string, otherwise returns <code>#
 
 
 <!--========================================================================-->
-<h3><a name="Modification">Modification</a></h3>
+<h4><a name="Modification">Modification</a></h4>
 
 <dl>
 
@@ -1324,7 +1320,7 @@ Returns <code>#t</code> if <var>obj</var> is a string, otherwise returns <code>#
 </dl>
 
 <!--========================================================================-->
-<h3><a name="Comparison">Comparison</a></h3>
+<h4><a name="Comparison">Comparison</a></h4>
 
 <dl>
 
@@ -1509,7 +1505,7 @@ A legal but nonetheless discouraged implementation:
 </dl>
 
 <!--========================================================================-->
-<h3><a name="PrefixesSuffixes">Prefixes &amp; suffixes</a></h3>
+<h4><a name="PrefixesSuffixes">Prefixes &amp; suffixes</a></h4>
 
 <dl>
 <!--
@@ -1588,7 +1584,7 @@ Comparison is simply done on individual code-points of the string.
 </dl>
 
 <!--========================================================================-->
-<h3><a name="Searching">Searching</a></h3>
+<h4><a name="Searching">Searching</a></h4>
 
 <dl>
 
@@ -1706,7 +1702,7 @@ they return either false (<code>#f</code>) or an exact non-negative integer.
 </dl>
 
 <!--========================================================================-->
-<h3><a name="CaseMapping">Alphabetic case mapping</a></h3>
+<h4><a name="CaseMapping">Alphabetic case mapping</a></h4>
 
 <dl>
 
@@ -1781,7 +1777,7 @@ specification.
 </dl>
 
 <!--========================================================================-->
-<h3><a name="ReverseAppend">Reverse &amp; append</a></h3>
+<h4><a name="ReverseAppend">Reverse &amp; append</a></h4>
 
 <dl>
 
@@ -1917,7 +1913,7 @@ a base character <var>bc</var> in string <var>s</var> would come out
 </dl>
 
 <!--========================================================================-->
-<h3><a name="FoldUnfoldMap">Fold, unfold &amp; map</a></h3>
+<h4><a name="FoldUnfoldMap">Fold, unfold &amp; map</a></h4>
 
 <dl>
 
@@ -2200,7 +2196,7 @@ Example:
 </dl>
 
 <!--========================================================================-->
-<h3><a name="ReplicateRotate">Replicate &amp; rotate</a></h3>
+<h4><a name="ReplicateRotate">Replicate &amp; rotate</a></h4>
 
 <dl>
 
@@ -2273,7 +2269,7 @@ Example:
 </dl>
 
 <!--========================================================================-->
-<h3><a name="Miscellaneous">Miscellaneous: insertion, parsing</a></h3>
+<h4><a name="Miscellaneous">Miscellaneous: insertion, parsing</a></h4>
 
 <dl>
 
@@ -2344,7 +2340,7 @@ Example:
 </dl>
 
 <!--========================================================================-->
-<h3><a name="FilterDelete">Filtering &amp; deleting</a></h3>
+<h4><a name="FilterDelete">Filtering &amp; deleting</a></h4>
 
 <dl>
 
@@ -2371,14 +2367,14 @@ Example:
 </dl>
 
 <!--========================================================================-->
-<h2><a name="LowLevelProcs">Low-level procedures</a></h2>
+<h3 id="LowLevelProcs">Low-level procedures</h3>
 <p>
 The following procedures are useful for writing other string-processing
 functions. In a Scheme system that has a module or package system, these
 procedures should be contained in a module named "string-lib-internals".
 
 <!--========================================================================-->
-<h3><a name="ArgUtils">Start/end optional-argument parsing &amp; checking utilities</a></h3>
+<h4 id="ArgUtils">Start/end optional-argument parsing &amp; checking utilities</h4>
 
 
 <dl>
@@ -2478,7 +2474,7 @@ procedures should be contained in a module named "string-lib-internals".
 
 
 <!--========================================================================-->
-<h3><a name="KMP">Knuth-Morris-Pratt searching</a></h3>
+<h4><a name="KMP">Knuth-Morris-Pratt searching</a></h4>
 <p>
 The Knuth-Morris-Pratt string-search algorithm is a method of rapidly scanning
 a sequence of text for the occurrence of some fixed string.  It has the
@@ -2725,7 +2721,7 @@ be defined as follows:
 </dl>
 
 <!--========================================================================-->
-<h1><a name="ReferenceImp">Reference implementation</a></h1>
+<h2 id="ReferenceImp">Reference implementation</h2>
 
 <p>
 This SRFI comes with a reference implementation. It can be found at:
@@ -2770,7 +2766,7 @@ library and get good results with it.
 
 
 <!--========================================================================-->
-<h1><a name="Acknowledgements">Acknowledgements</a></h1>
+<h2 id="Acknowledgements">Acknowledgements</h2>
 
 <p>
 The design of this library benefited greatly from the feedback provided during
@@ -2801,7 +2797,7 @@ by Mike Sperber, who is the editor for the SRFI, and by Hillary Sullivan,
 who is not.
 
 <!--========================================================================-->
-<h1><a name="Links">References &amp; links</a></h1>
+<h2 id="Links">References &amp; links</h2>
 
 <dl>
 
@@ -2904,7 +2900,7 @@ http://www.lispworks.com/documentation/HyperSpec/Front/index.htm</a>.
 </dl>
 
 <!--========================================================================-->
-<h1><a name="Copyright">Copyright</a></h1>
+<h2 id="Copyright">Copyright</h2>
 
 <p>
 Certain portions of this document -- the specific, marked segments of text
