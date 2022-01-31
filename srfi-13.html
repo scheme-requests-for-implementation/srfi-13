@@ -7,12 +7,12 @@
 <!--========================================================================-->
 <html lang="en-US">
   <head>
-    <meta name="keywords" content="Scheme, programming language, list processing, SRFI" />
-    <link rev="made" href="mailto:shivers@ai.mit.edu" />
+    <meta content="Scheme, programming language, list processing, SRFI" name="keywords" />
+    <link href="mailto:shivers@ai.mit.edu" rev="made" />
     <title>SRFI 13: String Libraries</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://srfi.schemers.org/srfi.css" rel="stylesheet" type="text/css" />
     <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png" />
     <!-- Should have a media=all to get, for example, printing to work.
       == But my Netscape will completely ignore the tag if I do that.
@@ -111,7 +111,7 @@
            /*]]>*/
     </style>
 
-    <style type="text/css" media="all">
+    <style media="all" type="text/css">
            /*<![CDATA[*/
            /* Nastiness: Here, I'm using a bug to work around a bug.
            ** Netscape rendering bugs mean you need bogus <dt> and <dd>
@@ -146,7 +146,7 @@
 <body>
 
 <!--========================================================================-->
-<h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI surfboard logo" /></a>13: String Libraries</h1>
+<h1><a href="https://srfi.schemers.org/"><img alt="SRFI surfboard logo" class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" /></a>13: String Libraries</h1>
 
 <p>by Olin Shivers</p>
 
@@ -283,7 +283,7 @@ extended <abbr title="Revised^5 Report on Scheme"><a href="#R5RS">R5RS</a></abbr
 <span class="r5rs-proc"><a href="#string-length">string-length</a>
 <a href="#string-ref">string-ref</a></span>
 <span class="r5rs-procx"><a href="#string-copy">string-copy</a></span>
-<a href="#substring/shared">substring/shared</a>
+<a href="#substring%2Fshared">substring/shared</a>
 <a href="#string-copy!">string-copy!</a> 
 <a href="#string-take">string-take</a> <a href="#string-take-right">string-take-right</a>
 <a href="#string-drop">string-drop</a> <a href="#string-drop-right">string-drop-right</a>
@@ -301,8 +301,8 @@ extended <abbr title="Revised^5 Report on Scheme"><a href="#R5RS">R5RS</a></abbr
 </dt><dd class="proc-index">
 <pre class="proc-index">
 <a href="#string-compare">string-compare</a> <a href="#string-compare-ci">string-compare-ci</a>
-<a href="#string&lt;&gt;">string&lt;&gt;</a>     <a href="#string=">string=</a>    <a href="#string&lt;">string&lt;</a>    <a href="#string&gt;">string&gt;</a>    <a href="#string&lt;=">string&lt;=</a>    <a href="#string&gt;=">string&gt;=</a>
-<a href="#string-ci&lt;&gt;">string-ci&lt;&gt;</a>  <a href="#string-ci=">string-ci=</a> <a href="#string-ci&lt;">string-ci&lt;</a> <a href="#string-ci&gt;">string-ci&gt;</a> <a href="#string-ci&lt;=">string-ci&lt;=</a> <a href="#string-ci&gt;=">string-ci&gt;=</a>
+<a href="#string%3C%3E">string&lt;&gt;</a>     <a href="#string%3D">string=</a>    <a href="#string%3C">string&lt;</a>    <a href="#string%3E">string&gt;</a>    <a href="#string%3C%3D">string&lt;=</a>    <a href="#string%3E%3D">string&gt;=</a>
+<a href="#string-ci%3C%3E">string-ci&lt;&gt;</a>  <a href="#string-ci%3D">string-ci=</a> <a href="#string-ci%3C">string-ci&lt;</a> <a href="#string-ci%3E">string-ci&gt;</a> <a href="#string-ci%3C%3D">string-ci&lt;=</a> <a href="#string-ci%3E%3D">string-ci&gt;=</a>
 <a href="#string-hash">string-hash</a>  <a href="#string-hash-ci">string-hash-ci</a>
 </pre>
 
@@ -338,8 +338,8 @@ extended <abbr title="Revised^5 Report on Scheme"><a href="#R5RS">R5RS</a></abbr
 <a href="#string-reverse">string-reverse</a> <a href="#string-reverse!">string-reverse!</a>
 <span class="r5rs-proc"><a href="#string-append">string-append</a></span>
 <a href="#string-concatenate">string-concatenate</a>
-<a href="#string-concatenate/shared">string-concatenate/shared</a> <a href="#string-append/shared">string-append/shared</a>
-<a href="#string-concatenate-reverse">string-concatenate-reverse</a> <a href="#string-concatenate-reverse/shared">string-concatenate-reverse/shared</a>
+<a href="#string-concatenate%2Fshared">string-concatenate/shared</a> <a href="#string-append%2Fshared">string-append/shared</a>
+<a href="#string-concatenate-reverse">string-concatenate-reverse</a> <a href="#string-concatenate-reverse%2Fshared">string-concatenate-reverse/shared</a>
 </pre>
 
 </dd><dt class="proc-index">Fold, unfold &amp; map
@@ -372,9 +372,9 @@ extended <abbr title="Revised^5 Report on Scheme"><a href="#R5RS">R5RS</a></abbr
 </dd><dt class="proc-index">Low-level procedures
 </dt><dd class="proc-index">
 <pre class="proc-index">
-<a href="#string-parse-start+end">string-parse-start+end</a>
-<a href="#string-parse-final-start+end">string-parse-final-start+end</a>
-<a href="#let-string-start+end">let-string-start+end</a>
+<a href="#string-parse-start%2Bend">string-parse-start+end</a>
+<a href="#string-parse-final-start%2Bend">string-parse-final-start+end</a>
+<a href="#let-string-start%2Bend">let-string-start+end</a>
 
 <a href="#check-substring-spec">check-substring-spec</a>
 <a href="#substring-spec-ok-p">substring-spec-ok?</a>
@@ -638,7 +638,7 @@ particular
       Procedures that have left/right directional variants
       use the following convention:
           <div class="indent">
-          <table cellspacing="0" cellpadding="0">
+          <table cellpadding="0" cellspacing="0">
           <tr align="left"><th>Direction</th>
                          <th>&nbsp;&nbsp;</th>
                          <th>Suffix</th></tr>
