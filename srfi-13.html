@@ -161,7 +161,11 @@
 </li><li>Revised: 2000-04-30
 </li><li>Revised: 2000-06-09
 </li><li>Revised: 2000-12-23
-</li></ul>
+</li>
+    <li>Revised to fix errata:
+      <ul>
+        <li>2022-01-13 (Revised to fix error in description of <code><a href="#kmp-step">kmp-step</a></code>.)</li></ul></li>
+</ul>
 
 <h2>Table of contents</h2>
 
@@ -2908,7 +2912,7 @@ or other on-line character sources for fixed strings.
 <var>Rv</var> is the Knuth-Morris-Pratt restart vector for the pattern, 
 as constructed by <code>make-kmp-restart-vector.</code> 
 The pattern begins at <var>pat</var>[<var>p-start</var>], and is
-<code>(string-length <var>rv</var>)</code> characters long.
+<code>(vector-length <var>rv</var>)</code> characters long.
 <var>C=</var> is the character-equality function used to construct the
 restart vector, typically <code>char=?</code> or <code>char-ci=?</code>.
 </p>
